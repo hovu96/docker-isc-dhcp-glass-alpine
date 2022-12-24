@@ -24,7 +24,7 @@ COPY ./files/startapp.sh /startapp.sh
 RUN chmod +x /startapp.sh /usr/sbin/service
 RUN apk --no-cache add dhcp git bash tzdata libtool npm libc6-compat gcompat
 RUN git clone https://github.com/Akkadius/glass-isc-dhcp.git
-RUN cd glass-isc-dhcp && mkdir logs && chmod u+x ./bin/ -R && chmod u+x *.sh && npm config set unsafe-perm true &&  npm install && npm install forever -g && apk del git libtool && rm -rf /var/cache/apk/* /tmp/* /tmp/.[!.]* /opt/glass-isc-dhcp/.git
+RUN cd glass-isc-dhcp && mkdir logs && chmod u+x ./bin/ -R && chmod u+x *.sh && npm install && npm install forever -g && apk del git libtool && rm -rf /var/cache/apk/* /tmp/* /tmp/.[!.]* /opt/glass-isc-dhcp/.git
 
 
 VOLUME ["/etc/dhcp"]
